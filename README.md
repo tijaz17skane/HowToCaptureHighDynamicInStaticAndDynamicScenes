@@ -15,9 +15,20 @@ A typical HDR example might include:
 - and a final HDR or tone-mapped result where both bright and dark areas are visible.
 
 ---
-<img width="1280" height="808" alt="bode-museum-berlin-germany-before-and-after-0012" src="https://github.com/user-attachments/assets/9b605366-b629-4c9b-a33d-4b1814ceb985" />
-<img width="700" height="623" alt="wOEqVRANkBImTjcN0dV329Ai4psvOd1tYguS66FAzfTWNXWB2RJRUQnlG_YMLVcvFD1hDBF46gjKB-KB-ROZM2bkpMqCYXEHWM8othEP6cQRCMumrp2ojhVyGD-t4GqzsH1ICJ_Y4O281M8_1dm6-aq4mTk0TzTa0wHx57MPpfSy46TDQgXvnu3Ox4Llba-0" src="https://github.com/user-attachments/assets/3b32de08-29c5-4e4a-a2bc-f75b561b7de3" />
-<img width="600" height="424" alt="w5vHpP22gHHqs_9cmKTrlpMCXVTGLOY4a_Z1nKhEsL71_hEWfewfMPeaBBbZke7MlTxrt_Qh7CvDWuvYQKe9B96Tql1987lke99Q99ZWHaiS_gXgQOya7ozMIXUz_pB3BIYJ7UPqW8UJvtYToTgkCbar-me9NPD-Tk0JvcDIe8Jr5WfgubsffKWUfXWNyuEd" src="https://github.com/user-attachments/assets/828b055a-df1d-46c8-ac64-ef9b8b68330a" />
+
+<div align="center">
+
+<img width="900" alt="HDR before and after example" src="https://github.com/user-attachments/assets/9b605366-b629-4c9b-a33d-4b1814ceb985" />
+
+<br><br>
+
+<img width="600" alt="HDR exposure bracketing example" src="https://github.com/user-attachments/assets/3b32de08-29c5-4e4a-a2bc-f75b561b7de3" />
+
+<br><br>
+
+<img width="600" alt="HDR tone mapping example" src="https://github.com/user-attachments/assets/828b055a-df1d-46c8-ac64-ef9b8b68330a" />
+
+</div>
 
 ---
 
