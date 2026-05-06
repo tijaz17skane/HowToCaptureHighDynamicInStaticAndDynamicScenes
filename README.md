@@ -344,11 +344,13 @@ For truly dynamic scenes, the best solution is often hardware-based HDR or singl
 
 ## 12. Conclusion
 
-HDR imaging is most reliable when the camera is stationary and the scene is static. In this setup, multiple exposures can be captured and merged to recover detail from both shadows and highlights.
+In my analysis and opinion, the both Exposure Stacking and Shadow Boosting deliver good results for the images I have captured, however I would consider exposure stacking more reliable, since shadow boosting in underexposed images results in noise in the low exposure regions.
 
-The best technical method is true HDR exposure stacking. This combines low, mid, and high exposure images into an HDR radiance map, which can then be tone-mapped for display.
+Mid-exposure adjustment, on the other hand, resulted in bad results overall, introducing an overall haze in the image, while not recovering the highlights. 
 
 Single-image methods such as shadow boosting or mid-exposure adjustment can improve the appearance of an image, but they are not true HDR. They are useful when only one image is available or when motion makes exposure stacking unreliable.
+
+For Dynamic Scenes, I would look into AutoExposure methods, which would automatically adjust the shutter speed accoding to the extent of motion in the scene. I would also like to experiment with a fixed fast shutter speed but with dynamic ISO to ensure that multiple exposure shots are taken for exposure stacking to work. 
 
 In summary:
 
