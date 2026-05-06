@@ -37,9 +37,9 @@ This project is organized around two main stages: first understanding the image 
 
 The input images in this repository were captured using Samsung S22 Expert RAW mode. Although these files have the `.dng` extension, they do not behave exactly like conventional camera RAW files from a DSLR or mirrorless camera. Smartphone RAW files, especially from computational photography modes such as Expert RAW, can contain Linear DNG data, TIFF-like structures, embedded previews, or already-processed image data. Because of this, it is not safe to assume that OpenCV or `rawpy` can load them directly as normal RGB images.
 
-For that reason, the first notebook, [`dng_analysis.ipynb`](dng_analysis.ipynb), is used to inspect the image files. It checks what kind of data is stored inside the DNG files and tests different loading methods such as `rawpy`, OpenCV, and `tifffile`. This step is important because the quality of the HDR result depends heavily on how the input images are decoded and displayed.
+For that reason, the first notebook, [`dng_analysis.ipynb`](https://github.com/tijaz17skane/HowToCaptureHighDynamicInStaticAndDynamicScenes/blob/main/dng_analysis.ipynb), is used to inspect the image files. It checks what kind of data is stored inside the DNG files and tests different loading methods such as `rawpy`, OpenCV, and `tifffile`. This step is important because the quality of the HDR result depends heavily on how the input images are decoded and displayed.
 
-After the DNG analysis, the project moves to the second notebook, [`hdr_methods.ipynb`](hdr_methods.ipynb). This notebook uses the loading strategy identified during the analysis step and applies three HDR-related methods. The first method performs true multi-exposure HDR stacking using the low, mid, and high exposure images. The second method uses only the low exposure image and boosts the shadows. The third method starts from the mid exposure image and adjusts highlights and shadows to create a more balanced result.
+After the DNG analysis, the project moves to the second notebook, [`hdr_methods.ipynb`](https://github.com/tijaz17skane/HowToCaptureHighDynamicInStaticAndDynamicScenes/blob/main/hdr_methods.ipynb). This notebook uses the loading strategy identified during the analysis step and applies three HDR-related methods. The first method performs true multi-exposure HDR stacking using the low, mid, and high exposure images. The second method uses only the low exposure image and boosts the shadows. The third method starts from the mid exposure image and adjusts highlights and shadows to create a more balanced result.
 
 The main idea is to compare three practical approaches:
 
@@ -153,41 +153,33 @@ high_exposure.dng  → reveals shadows
 
 ---
 
-## 4. DNG / RAW Image Analysis
+## 4. Loading RAW `.dng` Images
 
-Before applying HDR processing, it is important to understand what kind of image data is stored inside the `.dng` files.
+Different cameras and phones can store very different kinds of data inside `.dng` files. A DNG file may contain conventional Bayer RAW data, Linear DNG data, TIFF-like image data, embedded previews, or computationally processed image data. Because of this, the correct loading strategy should be determined before HDR processing begins.
 
-Open this notebook first:
+For this project, the DNG loading analysis is handled in the notebook below:
 
-[`dng_analysis.ipynb`](dng_analysis.ipynb)
+[`dng_analysis.ipynb`](https://github.com/tijaz17skane/HowToCaptureHighDynamicInStaticAndDynamicScenes/blob/main/dng_analysis.ipynb)
 
-This notebook investigates whether the Samsung Expert RAW files behave like:
-
-- conventional Bayer RAW files,
-- Linear DNG files,
-- TIFF-like containers,
-- already-rendered image data,
-- or unsupported RAW files.
-
-The notebook checks the files using:
-
-- `rawpy`
-- OpenCV
-- `tifffile`
-
-The analysis showed that these Samsung Expert RAW `.dng` files are not directly readable as normal RGB images by OpenCV, and they are not handled like conventional RAW files by `rawpy`. However, `tifffile` can access the image data inside the DNG/TIFF container.
-
-Because of this, the main HDR notebook uses a `tifffile`-based loading approach with an approximate rendering step before OpenCV processing.
+Please follow the guidelines in that notebook to determine what type of RAW/DNG image data is available and which loading method should be used. The notebook checks the files using `rawpy`, OpenCV, and `tifffile`, then explains why the final HDR workflow uses a `tifffile`-based loading approach for these Samsung Expert RAW images.
 
 ---
 
-## 5. HDR Processing Methods
+## 5. Step-by-Step HDR Stacking Using OpenCV
 
-After the DNG analysis, the main HDR processing is performed in:
+The step-by-step HDR processing implementation is provided in the main methods notebook:
 
-[`hdr_methods.ipynb`](hdr_methods.ipynb)
+[`hdr_methods.ipynb`](https://github.com/tijaz17skane/HowToCaptureHighDynamicInStaticAndDynamicScenes/blob/main/hdr_methods.ipynb)
 
-This notebook implements three methods.
+Please follow this notebook for the complete OpenCV workflow. It loads the images using the strategy identified in `dng_analysis.ipynb`, applies the HDR and enhancement methods, displays intermediate results, and saves the final outputs.
+
+The notebook covers three methods:
+
+```text
+Method 1: True HDR by exposure stacking
+Method 2: Shadow boosting from the low exposure image
+Method 3: Highlight and shadow adjustment from the mid exposure image
+```
 
 ---
 
@@ -284,8 +276,8 @@ imagecodecs
 
 Run the notebooks in this order:
 
-1. Open and run [`dng_analysis.ipynb`](dng_analysis.ipynb)
-2. Open and run [`hdr_methods.ipynb`](hdr_methods.ipynb)
+1. Open and run [`dng_analysis.ipynb`](https://github.com/tijaz17skane/HowToCaptureHighDynamicInStaticAndDynamicScenes/blob/main/dng_analysis.ipynb)
+2. Open and run [`hdr_methods.ipynb`](https://github.com/tijaz17skane/HowToCaptureHighDynamicInStaticAndDynamicScenes/blob/main/hdr_methods.ipynb)
 
 The first notebook explains how the `.dng` files are structured and why a `tifffile`-based loader is used.
 
@@ -383,5 +375,5 @@ Best for dynamic scenes:
 
 ## Main Notebooks
 
-- [`dng_analysis.ipynb`](dng_analysis.ipynb): investigates how the Samsung Expert RAW `.dng` files can be read.
-- [`hdr_methods.ipynb`](hdr_methods.ipynb): applies the three HDR-related processing methods using OpenCV.
+- [`dng_analysis.ipynb`](https://github.com/tijaz17skane/HowToCaptureHighDynamicInStaticAndDynamicScenes/blob/main/dng_analysis.ipynb): investigates how the Samsung Expert RAW `.dng` files can be read.
+- [`hdr_methods.ipynb`](https://github.com/tijaz17skane/HowToCaptureHighDynamicInStaticAndDynamicScenes/blob/main/hdr_methods.ipynb): applies the three HDR-related processing methods using OpenCV.
