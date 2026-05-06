@@ -15,6 +15,9 @@ A typical HDR example might include:
 - and a final HDR or tone-mapped result where both bright and dark areas are visible.
 
 ---
+<img width="1280" height="808" alt="bode-museum-berlin-germany-before-and-after-0012" src="https://github.com/user-attachments/assets/9b605366-b629-4c9b-a33d-4b1814ceb985" />
+
+---
 
 ## 1. Capturing HDR Images for Static Scenes
 
