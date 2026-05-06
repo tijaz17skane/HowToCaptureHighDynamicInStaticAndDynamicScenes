@@ -298,10 +298,6 @@ Dynamic scenes are more difficult than static scenes because objects may move be
 people walking
 cars moving
 trees moving in wind
-water waves
-rain
-changing lights
-handheld camera motion
 ```
 
 In a static HDR pipeline, the algorithm assumes that the same pixel location corresponds to the same scene point in every exposure. Motion breaks this assumption.
@@ -311,9 +307,6 @@ This can create artifacts such as:
 ```text
 ghosting
 double edges
-blurred moving objects
-incorrect colors around motion boundaries
-misaligned object edges
 ```
 
 For dynamic scenes, there are three practical options:
@@ -332,17 +325,7 @@ For truly dynamic scenes, the best solution is often hardware-based HDR or singl
 
 ---
 
-## 11. Method Comparison
-
-| Method | Input Required | True HDR? | Best For | Main Advantage | Main Limitation |
-|---|---:|---:|---|---|---|
-| Exposure stacking | Multiple exposures | Yes | Static scenes | Best highlight and shadow recovery | Requires static scene and stationary camera |
-| Shadow boosting from low exposure | One low exposure image | No | Preserving highlights | Avoids clipped highlights and motion artifacts | Shadows may become noisy |
-| Mid-exposure adjustment | One mid exposure image | No | Quick visual improvement | Simple and convenient | Cannot recover clipped highlights or black shadows |
-
----
-
-## 12. Conclusion
+## 11. Conclusion
 
 In my analysis and opinion, the both Exposure Stacking and Shadow Boosting deliver good results for the images I have captured, however I would consider exposure stacking more reliable, since shadow boosting in underexposed images results in noise in the low exposure regions.
 
