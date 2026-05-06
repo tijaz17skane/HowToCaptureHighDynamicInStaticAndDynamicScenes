@@ -237,18 +237,13 @@ Generated results are saved in the `outputs/` folder when `hdr_methods.ipynb` is
 
 Typical outputs include:
 
-```text
-outputs/
-├── method_1_stacked_hdr.hdr
-├── method_1_stacked_hdr_tonemapped.jpg
-├── method_2_shadow_boosted.jpg
-├── method_3_mid_exposure_adjusted.jpg
-├── input_exposure_reference.jpg
-├── method_output_comparison.jpg
-└── input_and_output_comparison.jpg
-```
+<div align="center">
 
-The output folder may be empty in the repository if generated files are ignored by Git. The results can be recreated by running the notebook.
+<img width="1000" alt="Input and output HDR method comparison" src="outputs/input_and_output_comparison.jpg" />
+
+<p><em>Top row: low, mid, and high exposure inputs. Bottom row: HDR stacking, shadow boosting, and mid-exposure adjustment results.</em></p>
+
+</div>
 
 ---
 
